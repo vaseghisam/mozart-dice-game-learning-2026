@@ -165,32 +165,6 @@ mozart-dice-game-learning/
 └── requirements.txt
 ```
 
-## `requirements.txt`
-
-```text
-pydub>=0.25.1
-```
-
-`ffmpeg` is a system dependency and is not installed through `requirements.txt`.
-
-## `.gitignore`
-
-```gitignore
-__pycache__/
-*.py[cod]
-
-.venv/
-venv/
-
-.ipynb_checkpoints/
-.DS_Store
-
-*.wav
-*.zip
-mozart_wav/
-audio/
-```
-
 ## Historical note
 
 The musical dice game was published in 1792 by Nikolaus Simrock under Mozart’s name, after Mozart’s death. Its attribution to Mozart is not considered fully authenticated.
