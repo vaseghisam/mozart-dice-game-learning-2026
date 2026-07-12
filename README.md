@@ -184,6 +184,10 @@ https://nifty.stanford.edu/2023/wayne-musical-dice-game/
 
 The repository license applies only to the original code in this project. It does not automatically apply to third-party WAV files, soundfonts, notation files, or historical musical material.
 
+## Documentation
+
+For a fuller explanation of the mathematical model, learning procedures, limitations, and possible extensions, see [DOCUMENTATION.md](DOCUMENTATION.md).
+
 ## License
 
 The original code in this repository is released under the MIT License.
