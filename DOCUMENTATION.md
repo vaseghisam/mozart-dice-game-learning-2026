@@ -1,6 +1,6 @@
 # Mozart Dice Game Learning
 
-A Python and Jupyter implementation of the musical dice game attributed to Wolfgang Amadeus Mozart, extended with two small probabilistic learning models that generate complete waltzes from precomposed WAV fragments.
+A Python implementation of the musical dice game attributed to Wolfgang Amadeus Mozart, extended with two small probabilistic learning models that generate complete waltzes from precomposed WAV fragments.
 
 The project compares three generative procedures:
 
@@ -61,14 +61,14 @@ learned probability distribution + random sampling
 
 ## Repository Contents
 
-A recommended repository structure is:
+The repository contains:
 
 ```text
-mozart-dice-game-learning/
+mozart-dice-game-learning-2026/
 ├── README.md
+├── DOCUMENTATION.md
 ├── LICENSE
 ├── .gitignore
-├── mozart_dice_game.ipynb
 ├── mozart_dice_game.py
 └── requirements.txt
 ```
@@ -82,14 +82,13 @@ The WAV files are not included in this repository.
 The code requires:
 
 * Python 3.9 or later
-* Jupyter Notebook or JupyterLab
 * `pydub`
 * `ffmpeg`
 
-Install the Python dependency with:
+Install the Python dependency from the repository folder with:
 
 ```bash
-pip install pydub
+python -m pip install -r requirements.txt
 ```
 
 On macOS, install `ffmpeg` with Homebrew:
@@ -151,7 +150,7 @@ The trio variants correspond to die values from `1` to `6`.
 
 ## Audio Folder Configuration
 
-Open the notebook or Python script and edit this line:
+Open `mozart_dice_game.py` and edit this line:
 
 ```python
 audio_directory = Path("/PUT/YOUR/FOLDER/PATH/HERE")
@@ -188,21 +187,13 @@ Do not point the code to the parent directory if the WAV files are located insid
 
 ---
 
-## Running the Notebook
+## Running the Script
 
-Start Jupyter from the repository folder:
+After setting `audio_directory`, run from the repository folder:
 
 ```bash
-jupyter notebook
+python mozart_dice_game.py
 ```
-
-Open:
-
-```text
-mozart_dice_game.ipynb
-```
-
-Set the correct `audio_directory`, then run the main code cell.
 
 The program will:
 
@@ -228,14 +219,12 @@ learned_position_model_waltz.wav
 learned_transition_model_waltz.wav
 ```
 
-These files are saved in the current working directory of the notebook or script.
+These files are saved in the current working directory.
 
-In Jupyter, the current working directory can be checked with:
+Check that directory from the same terminal with:
 
-```python
-from pathlib import Path
-
-print(Path.cwd())
+```bash
+python -c "from pathlib import Path; print(Path.cwd())"
 ```
 
 ---
@@ -410,7 +399,7 @@ for path in sorted(audio_directory.glob("*.wav"))[:20]:
 
 ### `AudioSegment` cannot find ffmpeg
 
-Install `ffmpeg` and restart the Jupyter kernel.
+Install `ffmpeg`.
 
 On macOS:
 
@@ -418,28 +407,17 @@ On macOS:
 brew install ffmpeg
 ```
 
-Then restart Jupyter.
+Then rerun `python mozart_dice_game.py`.
 
 ### No output files are visible
 
-Check the notebook working directory:
+Check the current working directory from the same terminal:
 
-```python
-from pathlib import Path
-
-print(Path.cwd())
+```bash
+python -c "from pathlib import Path; print(Path.cwd())"
 ```
 
 The generated WAV files are saved there unless another output path is specified.
-
-### The notebook uses an old function definition
-
-Jupyter keeps earlier definitions in memory.
-
-After changing a function:
-
-1. rerun the cell containing that function, or
-2. restart the kernel and run all cells again.
 
 ---
 
@@ -492,10 +470,10 @@ When referring to this repository, cite it as:
 Sam Vaseghi, Mozart Dice Game Learning, GitHub repository.
 ```
 
-After the repository is published, add its final URL:
+Repository URL:
 
 ```text
-https://github.com/vaseghisam/mozart-dice-game-learning
+https://github.com/vaseghisam/mozart-dice-game-learning-2026
 ```
 
 ---

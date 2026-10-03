@@ -1,6 +1,6 @@
 # Mozart Dice Game Learning
 
-A Jupyter/Python implementation of the musical dice game attributed to Wolfgang Amadeus Mozart, extended with two small probabilistic learning models.
+A Python implementation of the musical dice game attributed to Wolfgang Amadeus Mozart, extended with two small probabilistic learning models.
 
 The program generates complete waltzes by selecting precomposed WAV fragments for:
 
@@ -39,14 +39,13 @@ These are deliberately small and transparent models. They do not generate new no
 ## Requirements
 
 * Python 3.9 or later
-* Jupyter Notebook or JupyterLab
 * `pydub`
 * `ffmpeg`
 
-Install the Python package with:
+Install the Python dependency from the repository folder with:
 
 ```bash
-pip install pydub
+python -m pip install -r requirements.txt
 ```
 
 On macOS, install `ffmpeg` with:
@@ -91,7 +90,7 @@ The position numbers run from `0` to `15`.
 
 ## Configure the audio path
 
-In the notebook or script, edit:
+In `mozart_dice_game.py`, edit:
 
 ```python
 audio_directory = Path("/PUT/YOUR/FOLDER/PATH/HERE")
@@ -107,13 +106,11 @@ The selected folder must directly contain the WAV files.
 
 ## Run the project
 
-Open the notebook:
+After setting `audio_directory`, run from the repository folder:
 
-```text
-mozart_dice_game.ipynb
+```bash
+python mozart_dice_game.py
 ```
-
-Set the correct `audio_directory`, then run the main code cell.
 
 The program will:
 
@@ -137,12 +134,10 @@ learned_transition_model_waltz.wav
 
 The files are saved in the current working directory.
 
-In Jupyter, check that directory with:
+Check that directory from the same terminal with:
 
-```python
-from pathlib import Path
-
-print(Path.cwd())
+```bash
+python -c "from pathlib import Path; print(Path.cwd())"
 ```
 
 ## Important limitation
@@ -156,11 +151,11 @@ The musical structure remains largely encoded in the original fragment table. Th
 ## Repository structure
 
 ```text
-mozart-dice-game-learning/
+mozart-dice-game-learning-2026/
 ├── README.md
+├── DOCUMENTATION.md
 ├── LICENSE
 ├── .gitignore
-├── mozart_dice_game.ipynb
 ├── mozart_dice_game.py
 └── requirements.txt
 ```
